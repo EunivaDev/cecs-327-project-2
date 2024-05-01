@@ -33,6 +33,7 @@ class Node:
         print("- Performance: Distributed allocation may have better performance under high workload compared to centralized allocation.")
 
 def distribute_tasks(nodes, tasks):
+    tasks.sort(key=lambda x: x.priority, reverse=True) #sorting tasks
     for task in tasks:
         assigned = False
         while not assigned:
@@ -64,4 +65,4 @@ if __name__ == "__main__":
         #node.negotiate_resources(tasks)
 
     # Perform comparison and analysis
-    nodes[0].compare_and_analyze()  # Perform analysis on one of the nodes
+    #nodes[0].compare_and_analyze()  # Perform analysis on one of the nodes
